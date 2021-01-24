@@ -17,11 +17,11 @@ If you want to check the original template in HTML5 and Bootstrap, [click here](
     ```
     And javascript dependencies
     ```bash
-    yarn install
+    yarn install && yarn dev
 
     #OR
 
-    npm install
+    npm install && npm run dev
     ```
 
 3. Migrate database
