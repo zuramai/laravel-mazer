@@ -24,12 +24,20 @@ If you want to check the original template in HTML5 and Bootstrap, [click here](
     npm install && npm run dev
     ```
 
-3. Migrate database
+3. Set up Laravel configurations
+```bash
+copy .env.example .env
+php artisan key:generate
+```
+
+4. Set your database in .env
+
+5. Migrate database
     ```bash
     php artisan migrate
     ```
 
-4. Serve the application
+6. Serve the application
     ```bash
     php artisan serve
     ```
