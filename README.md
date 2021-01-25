@@ -25,10 +25,10 @@ If you want to check the original template in HTML5 and Bootstrap, [click here](
     ```
 
 3. Set up Laravel configurations
-```bash
-copy .env.example .env
-php artisan key:generate
-```
+    ```bash
+    copy .env.example .env
+    php artisan key:generate
+    ```
 
 4. Set your database in .env
 
