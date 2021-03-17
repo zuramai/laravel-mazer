@@ -14,7 +14,12 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/bootstrap.scss', 'public/css')
     .sass('resources/sass/app.scss', 'public/css')
-    .sass('resources/sass/pages/auth.scss', 'public/css/pages');
+    .sass('resources/sass/pages/auth.scss', 'public/css/pages')
+    .postCss('resources/css/app.css', 'public/css/tailwind.css', [
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
+    ]);
 
 if (mix.inProduction()) {
     mix.version();

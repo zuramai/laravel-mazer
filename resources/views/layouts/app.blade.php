@@ -7,30 +7,15 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Vendors -->
-        <link rel="stylesheet" href="{{ asset('/vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
-        <link rel="stylesheet" href="{{ asset('/vendors/bootstrap-icons/bootstrap-icons.css') }}">
-
-
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/bootstrap.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-
-
-        @livewireStyles
-
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        @include('layouts.partials.styles')
     </head>
     <body>
         <div id="app">
-            @livewire('layouts.partials.sidebar')
+            @include('layouts.partials.sidebar')
             
             <div id="main" class='layout-navbar'>
-                @livewire('layouts.partials.header')
+                @include('layouts.partials.header')
                 <div id="main-content">
 
                     <div class="page-heading">
@@ -40,15 +25,13 @@
                         {{ $slot }}
                     </div>
 
-                    @livewire('layouts.partials.footer')
+                    @include('layouts.partials.footer')
                 </div>
             </div>
         </div>
-        <script src="{{ asset('/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-        <script src="{{ asset('/js/bootstrap.bundle.min.js') }}"></script>
 
-        @livewireScripts
-        <script src="{{ asset('/js/main.js') }}"></script>
+        <!-- Scripts -->
+        @include('layouts.partials.scripts')
 
     </body>
 </html>
