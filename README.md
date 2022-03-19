@@ -34,7 +34,7 @@ If you want to check the original template in HTML5 and Bootstrap, [click here](
 
 5. Migrate database
     ```bash
-    php artisan migrate
+    php artisan migrate --seed
     ```
 
 6. Serve the application
@@ -42,5 +42,10 @@ If you want to check the original template in HTML5 and Bootstrap, [click here](
     php artisan serve
     ```
 
+7. Login credentials
+
+**Email:** user@demo.com
+
+**Password:** password
 ## Contributing
 Feel free to contribute and make a pull request.
