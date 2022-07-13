@@ -1522,7 +1522,7 @@
       // event listeners are registered (the mutation observer will take care of them)
 
 
-      this.initializeElements(this.$el, () => {}, componentForClone); // Use mutation observer to detect new elements being added within this component at run-time.
+      this.initializeElements(this.$el, () => {}, componentForClone ? false : true); // Use mutation observer to detect new elements being added within this component at run-time.
       // Alpine's just so darn flexible amirite?
 
       this.listenForNewElementsToInitialize();
@@ -1611,15 +1611,15 @@
       });
     }
 
-    initializeElements(rootEl, extraVars = () => {}, componentForClone = false) {
+    initializeElements(rootEl, extraVars = () => {}, shouldRegisterListeners = true) {
       this.walkAndSkipNestedComponents(rootEl, el => {
         // Don't touch spawns from for loop
         if (el.__x_for_key !== undefined) return false; // Don't touch spawns from if directives
 
         if (el.__x_inserted_me !== undefined) return false;
-        this.initializeElement(el, extraVars, componentForClone ? false : true);
+        this.initializeElement(el, extraVars, shouldRegisterListeners);
       }, el => {
-        if (!componentForClone) el.__x = new Component(el);
+        el.__x = new Component(el);
       });
       this.executeAndClearRemainingShowDirectiveStack();
       this.executeAndClearNextTickStack(rootEl);
@@ -1849,7 +1849,7 @@
   }
 
   const Alpine = {
-    version: "2.8.2",
+    version: "2.8.1",
     pauseMutationObserver: false,
     magicProperties: {},
     onComponentInitializeds: [],
@@ -3800,6 +3800,8 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./dark */ "./resources/js/dark.js");
+
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
 /***/ }),
@@ -3832,6 +3834,68 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/dark.js":
+/*!******************************!*\
+  !*** ./resources/js/dark.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "toggleDarkTheme": () => (/* binding */ toggleDarkTheme),
+/* harmony export */   "setTheme": () => (/* binding */ setTheme)
+/* harmony export */ });
+var THEME_KEY = "theme";
+var THEME_REGEX = /\btheme-[a-z0-9]+\b/g;
+var toggler = document.getElementById("toggle-dark");
+function toggleDarkTheme() {
+  setTheme(document.body.classList.contains("theme-dark") ? "theme-light" : "theme-dark");
+}
+/**
+ * Set theme for mazer
+ * @param {"theme-dark"|"theme-light"} theme
+ */
+
+function setTheme(theme) {
+  var dontPersist = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  document.body.className = document.body.className.replace(THEME_REGEX, "");
+  console.log("change theme to ", theme);
+  document.body.classList.add(theme);
+  toggler.checked = theme == "theme-dark";
+
+  if (!dontPersist) {
+    localStorage.setItem(THEME_KEY, theme);
+  }
+}
+toggler.addEventListener("input", function (e) {
+  setTheme(e.target.checked ? "theme-dark" : "theme-light");
+});
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Dark Loaded"); //If the user manually set a theme, we'll load that
+
+  var storedTheme;
+
+  if (storedTheme = localStorage.getItem(THEME_KEY)) {
+    return setTheme(storedTheme);
+  } //Detect if the user set his preferred color scheme to dark
+
+
+  if (!window.matchMedia) {
+    return;
+  } //Media query to detect dark preference
+
+
+  var mediaQuery = window.matchMedia("(prefers-color-scheme: dark)"); //Register change listener
+
+  mediaQuery.addEventListener("change", function (e) {
+    return setTheme(e.matches ? "theme-dark" : "theme-light", true);
+  });
+  return setTheme(mediaQuery.matches ? "theme-dark" : "theme-light", true);
+});
 
 /***/ }),
 
@@ -21354,6 +21418,18 @@ process.umask = function() { return 0; };
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	
