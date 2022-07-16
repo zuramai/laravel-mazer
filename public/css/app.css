@@ -71,7 +71,7 @@
 }
 
 .alert-success {
-  background-color: #4fbe87;
+  background-color: #28ab55;
   color: #fff;
 }
 .alert-success a {
@@ -81,7 +81,7 @@
 
 .alert-warning {
   background-color: #eaca4a;
-  color: #fff;
+  color: #3f3a26;
 }
 .alert-warning a {
   color: #fff;
@@ -342,10 +342,10 @@
   margin-bottom: 0;
 }
 .card.card-statistic .card-right span.green {
-  color: #6fff6f;
+  color: rgb(111, 255, 111);
 }
 .card.card-statistic .card-right span.red {
-  color: #ff7979;
+  color: rgb(255, 121, 121);
 }
 .card.card-statistic .chart-wrapper {
   height: 100px;
@@ -555,7 +555,7 @@
 }
 .form-group[class*=has-icon-] .form-control-icon i, .form-group[class*=has-icon-] .form-control-icon svg {
   width: 1.2rem;
-  color: #6c757d;
+  color: #adb5bd;
   font-size: 1.2rem;
 }
 .form-group[class*=has-icon-] .form-control-icon i:before, .form-group[class*=has-icon-] .form-control-icon svg:before {
@@ -867,7 +867,7 @@
   margin-left: 1rem;
 }
 .sidebar-wrapper .menu .sidebar-link:hover {
-  background-color: #f0f1f5;
+  background-color: rgb(240, 241, 245);
 }
 .sidebar-wrapper .menu .sidebar-item {
   list-style: none;
