@@ -19,6 +19,9 @@
             font-size: 1rem;
             height: 1rem;
         }
+        i:before {
+            vertical-align: top;
+        }
     }
 
     img {
@@ -48,6 +51,13 @@
         .avatar-content, img {
             width: 32px;
             height: 32px;
+            font-size: .8rem;
+        }
+    }
+    &.avatar-md2 {
+        .avatar-content, img {
+            width: 40px;
+            height: 40px;
             font-size: .8rem;
         }
     }

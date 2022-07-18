@@ -7,7 +7,7 @@
         background: linear-gradient(to bottom, #25a6f1, #54b9ff);
         .card-title {
             text-transform: uppercase;
-            color: #fff;
+            color: rgba(255, 255, 255, 0.651);
             letter-spacing: .8px;
             font-weight: 400;
             font-size: 1.3rem;
@@ -75,7 +75,6 @@
         margin-bottom: 0;
         border-right: 1px  solid $gray-200;
         box-shadow: 0 10px 10px $gray-200;
-        margin-bottom: .5rem;
     }
     h1 {
         text-align: center;
@@ -109,12 +108,12 @@
         padding-bottom: 20px;
         .card-header, .card-body {
             background-color: map-get($theme-colors, 'primary');
-            color: #fff;
+            color: $card-bg;
         }
         ul {
             li {
                 i, svg {
-                    color: $green-400;
+                    color: $teal-400;
                 }
                 color: #fff;
             }
