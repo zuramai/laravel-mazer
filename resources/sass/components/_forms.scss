@@ -1,7 +1,7 @@
 .form-group {
     margin-bottom: .7rem;
     label {
-        color: rgb(35, 28, 99, .7);
+        color: $form-label-color;
         font-weight: 600;
     }
     small {
@@ -16,8 +16,11 @@
             left: 0;
             padding: 5px;
             font-size: .6rem;
-            background-color: $gray-200;
+            background-color: $form-textarea-title-bg;
             width: 100%;
+            border-width: 1px 1px 0 1px;
+            border-style: solid;
+            border-color: lighten($input-border-color, 5%);
             transition: $input-transition;
         }
         .form-control, dataTable-input {
@@ -65,8 +68,6 @@
         }
         .form-control-icon {
             position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
             padding: 0 .6rem;
             i, svg {
                 width: 1.2rem;
@@ -79,11 +80,34 @@
         }
 
     }
+
+    &.mandatory .form-label:first-child:after {
+      content: ' *';
+      color: $form-feedback-invalid-color;
+    }
+
+    &.is-invalid * {
+      color: $form-feedback-invalid-color;
+      border-color: $form-feedback-invalid-color;
+    }
 }
 .form-control {
+    & ~ .form-control-icon {
+        top: .28rem;
+    }
+    &.form-control-lg {
+        padding: .55rem 1rem;
+        font-size: 1.05rem;
+        & ~ .form-control-icon {
+            top: .55rem;
+        }
+    }
     &.form-control-xl {
         padding: .85rem 1rem;
         font-size: 1.2rem;
+        & ~ .form-control-icon {
+            top: .55rem;
+        }
     }
 }
 .form-check {
@@ -146,6 +170,7 @@
     }
 }
 
+// Vendor: Datatable
 .dataTable-input {
     min-height: calc(1.5em + 0.934rem + 2px);
     padding: 0.467rem 0.6rem;
@@ -164,9 +189,25 @@
 
     &:focus {
         color: #555252;
-        background-color: white;
-        border-color: #5A8DEE;
+        background-color: $input-focus-bg;
+        border-color: $input-focus-border-color;
         outline: 0;
         box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.1);
     }
+}
+
+// Vendor: Choices
+.choices__inner {
+    background-color: $choices-bg;
+    border-color: $choices-border-color;
+}
+.choices__input {
+    background-color: $choices-bg !important;
+    color: $choices-input-color;
+}
+.choices__list {
+    background-color: $choices-dropdown-bg;
+}
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background-color: $choices-highlight-bg;
 }

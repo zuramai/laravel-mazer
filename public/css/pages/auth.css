@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: #fff;
 }
 
 #auth {
@@ -8,7 +8,7 @@ body {
 }
 #auth #auth-right {
   height: 100%;
-  background: linear-gradient(90deg, #2d499d, #3f5491);
+  background: url(/images/4853433.png?45649b87e0b3f50bfa1372c6cdb4595f), linear-gradient(90deg, #2d499d, #3f5491);
 }
 #auth #auth-left {
   padding: 5rem 8rem;
@@ -32,4 +32,13 @@ body {
   #auth #auth-left {
     padding: 5rem;
   }
+}
+@media screen and (max-width: 576px) {
+  #auth #auth-left {
+    padding: 5rem 3rem;
+  }
+}
+
+body.theme-dark #auth-right {
+  background: url(/images/4853433.png?45649b87e0b3f50bfa1372c6cdb4595f), linear-gradient(90deg, #2d499d, #3f5491);
 }
