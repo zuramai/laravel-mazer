@@ -24,8 +24,11 @@
 
                     <x-jet-label for="photo" value="{{ __('Photo') }}" />
 
-                    <div class="mt-2" x-show="! photoPreview">
-                        <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}" width="250" height="250">
+                    <div>
+                        <div class="avatar avatar-full bg-warning mt-2" x-show="! photoPreview">
+                            <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}">
+                        </div>
+
                     </div>
 
                     <div class="mt-2" x-show="photoPreview">

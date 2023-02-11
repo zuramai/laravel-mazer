@@ -6011,6 +6011,11 @@ body.theme-dark .avatar.avatar-xl .avatar-content, body.theme-dark .avatar.avata
   height: 60px;
   font-size: 1.4rem;
 }
+body.theme-dark .avatar.avatar-full .avatar-content, body.theme-dark .avatar.avatar-full img {
+  width: 200px;
+  height: 200px;
+  font-size: 3rem;
+}
 body.theme-dark .btn .badge {
   border-radius: 50%;
   margin-left: 5px;
