@@ -16,7 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::group(['prefix' => 'components', 'as' => 'components.'], function() {
+    Route::get('/alert', function () {
+        return view('admin.component.alert');
+    })->name('alert');
+    Route::get('/accordion', function () {
+        return view('admin.component.accordion');
+    })->name('accordion');
+});
