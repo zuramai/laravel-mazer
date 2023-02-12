@@ -2,7 +2,8 @@
 
 @php
 $routeName = Request::route()->getName();
-$classes = str_contains($routeName, strtolower($name))
+$active = str_contains($routeName, strtolower($name));
+$classes = $active
 ? 'sidebar-item active'
 : 'sidebar-item';
 @endphp
@@ -13,7 +14,7 @@ $classes = str_contains($routeName, strtolower($name))
         <span>{{ $name }}</span>
     </a>
     @if(!$slot->isEmpty())
-    <ul class="submenu">
+    <ul class="submenu" style="display: {{ $active ? 'block' : 'none' }};">
         {{$slot}}
     </ul>
     @endif
