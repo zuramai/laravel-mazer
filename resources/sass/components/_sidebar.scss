@@ -14,6 +14,21 @@
     }
 }
 .sidebar-wrapper {
+
+    scrollbar-color: #435ebe transparent;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #435ebe;
+        border-radius: 12px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+        border-radius: 12px;
+    }
+
     width: 300px;
     height: 100vh;
     position: fixed;

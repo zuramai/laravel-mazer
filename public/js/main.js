@@ -36,17 +36,6 @@ document.querySelector('.sidebar-hide').addEventListener('click', () => {
 
 })
 
-
-// Perfect Scrollbar Init
-if(typeof PerfectScrollbar == 'function') {
-    const container = document.querySelector(".sidebar-wrapper");
-    const ps = new PerfectScrollbar(container, {
-        wheelPropagation: false
-    });
-}
-
-
-
 document.querySelectorAll('.sidebar-item').forEach(sidebarItem => {
     sidebarItem.querySelectorAll('.sidebar-link').forEach(sidebarLink => {
         if(sidebarLink.getAttribute('href') == window.location.href) sidebarItem.classList.add('active')

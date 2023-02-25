@@ -6644,6 +6644,8 @@ body.theme-dark #sidebar:not(.active) ~ #main {
   margin-left: 0;
 }
 body.theme-dark .sidebar-wrapper {
+  scrollbar-color: #435ebe transparent;
+  scrollbar-width: thin;
   width: 300px;
   height: 100vh;
   position: fixed;
@@ -6653,6 +6655,17 @@ body.theme-dark .sidebar-wrapper {
   background-color: #1e1e2d;
   bottom: 0;
   transition: left 0.5s ease-out;
+}
+body.theme-dark .sidebar-wrapper::-webkit-scrollbar {
+  width: 4px;
+}
+body.theme-dark .sidebar-wrapper::-webkit-scrollbar-thumb {
+  background-color: #435ebe;
+  border-radius: 12px;
+}
+body.theme-dark .sidebar-wrapper::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 12px;
 }
 body.theme-dark .sidebar-wrapper .sidebar-header {
   padding: 2rem 2rem 1rem;
