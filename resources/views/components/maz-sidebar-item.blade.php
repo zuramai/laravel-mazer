@@ -1,14 +1,21 @@
-@props(['active', 'icon', 'link', 'name'])
+@props(['icon', 'link', 'name'])
 
 @php
-$classes = ($active ?? false)
-            ? 'sidebar-item  active'
-            : 'sidebar-item';
+$routeName = Request::route()->getName();
+$active = str_contains($routeName, strtolower($name));
+$classes = $active
+? 'sidebar-item active'
+: 'sidebar-item';
 @endphp
 
-<li class="sidebar-item">
-    <a href="{{ $link }}" class='sidebar-link'>
+<li class="{{ $classes }} {{$slot->isEmpty() ? '' : 'has-sub'}}">
+    <a href="{{ $slot->isEmpty() ? $link : '#' }}" class='sidebar-link'>
         <i class="{{ $icon }}"></i>
         <span>{{ $name }}</span>
     </a>
+    @if(!$slot->isEmpty())
+    <ul class="submenu" style="display: {{ $active ? 'block' : 'none' }};">
+        {{$slot}}
+    </ul>
+    @endif
 </li>
