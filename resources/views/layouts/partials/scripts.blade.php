@@ -1,4 +1,4 @@
-<script src="{{ mix('js/app.js') }}"></script>
+@vite(["resources/js/app.js"])
 
 <script src="{{ asset('/vendors/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 <script src="{{ asset('/vendors/tinymce/tinymce.min.js') }}"></script>
