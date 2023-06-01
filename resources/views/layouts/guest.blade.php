@@ -14,14 +14,9 @@
         <link rel="stylesheet" href="{{ asset('vendors/perfect-scrollbar/perfect-scrollbar.css') }}">
         <link rel="stylesheet" href="{{ asset('vendors/bootstrap-icons/bootstrap-icons.css') }}">
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/bootstrap.css') }}">
-        <link rel="stylesheet" href="{{ mix('css/pages/auth.css') }}">
+        <!-- Styles and Script -->
+        @vite(["resources/css/app.css", "resources/sass/bootstrap.scss", "resources/sass/themes/dark/app-dark.scss", "resources/sass/app.scss", "resources/sass/pages/auth.scss", "resources/js/app.js"])
 
-
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body>
         <div id="auth">
