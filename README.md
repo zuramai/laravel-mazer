@@ -2,6 +2,22 @@
 <h1 align="center">Mazer + Laravel Jetstream</h1>
 <p align="center">Mazer is a Admin Dashboard Template that can help you develop faster. We bring Mazer with Laravel starter project. It's completely free and you can use it in your projects.</p>
 
+
+<table>
+	<tr>
+		<th>Sponsored by</th>
+	</tr>
+	<tr>
+		<td>
+		<p align="center">
+			<a href="https://lokal.so/?ref=zuramai">
+				<img src="https://github.com/zuramai/zuramai/blob/master/sponsors/lokalso.png?raw=true"  width="50%">
+			</a>
+		</p>	
+		</td>
+	</tr>
+</table>
+
 ## Main Template
 If you want to check the original template in HTML5 and Bootstrap, [click here](https://github.com/zuramai/mazer) to open template repository.
 
